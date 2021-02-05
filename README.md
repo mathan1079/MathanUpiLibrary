@@ -2,9 +2,8 @@
  
 
 
-[ ![Download](https://api.bintray.com/packages/gpfreetech/IndiUpi/IndiUpi/images/download.svg?version=1.1) ](https://bintray.com/gpfreetech/IndiUpi/IndiUpi/1.1/link)
-[ ![Bintray](https://img.shields.io/badge/Bintray-v1.1-red) ](https://bintray.com/gpfreetech/IndiUpi/IndiUpi/1.1/link)
-![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg)
+
+![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg)
 
 
 
