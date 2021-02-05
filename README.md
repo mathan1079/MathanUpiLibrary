@@ -28,10 +28,10 @@ In your `build.gradle` file of app module, add below dependency to import this l
 ### In Your Working Activity
 In Android app, Create activity and implement basic payment integration step where you want to add. In demo app I have already created `SampleActivity.java`
 
-#### Initializing `IndiUpi` :
+#### Initializing `MatUpi` :
 See below code, these are parameters to start payment processing.
 ```java
-        IndiUpi indiUpi = new IndiUpi.Builder()
+        MatUpi matUpi = new MatUpi.Builder()
                 .with(this)
                 .setPayeeVpa("payee@upi")
                 .setAmount("AMOUNT_IN_DECIMAL")
@@ -98,7 +98,7 @@ See below code, these are parameters to start payment processing.
 <td>build()</td>
 <td>YES</td>
 <td>
-<p>It will build and returns the <span style="&ldquo;font-weight: bold; font-style: italic&rdquo;;">IndiUpi</span>single instance.</p>
+<p>It will build and returns the <span style="&ldquo;font-weight: bold; font-style: italic&rdquo;;">matUpi</span>single instance.</p>
 </td>
 </tr>
 </tbody>
@@ -107,16 +107,16 @@ See below code, these are parameters to start payment processing.
 #### Start Payment
 To start the payment, just call `pay()` method using current instance and after that transaction is started.
 ```java
-      indiUpi.pay();
+      matUpi.pay();
 ```
 Or
 ```java
-      indiUpi.pay("Payment Using"); // here your choice dialog title
+      matUpi.pay("Payment Using"); // here your choice dialog title
 ```
 #### Set Callback Listeners for response
 To register for callback events, you will have to set `PaymentStatusListener` with instance as below.
 ```java
-        indiUpi.setPaymentStatusListener(this);
+        matUpi.setPaymentStatusListener(this);
 ```
 **Description :**
 
@@ -130,39 +130,35 @@ To register for callback events, you will have to set `PaymentStatusListener` wi
     @Override
     public void onTransactionCompleted(TransactionResponse transactionResponse) {
         // Transaction Completed
-        Log.d("TransactionResponse", transactionResponse.toString());
-		// normal
-        txtStatus.setText(transactionResponse.toString());
-		//or as HTML Text in format
-		txtStatus.setText(Html.fromHtml(transactionResponse.toHTMLString()));
+      
     }
 
     @Override
     public void onTransactionSuccess(TransactionResponse transactionResponse) {
         // Payment Success
         Toast.makeText(this, "Payment Success", Toast.LENGTH_SHORT).show();
-        imageView.setImageResource(R.drawable.ic_success);
+        
     }
 
     @Override
     public void onTransactionSubmitted() {
         // Payment Pending
         Toast.makeText(this, "Payment Pending Or Submitted", Toast.LENGTH_SHORT).show();
-        imageView.setImageResource(R.drawable.ic_success);
+       
     }
 
     @Override
     public void onTransactionFailed() {
         // Payment Failed
         Toast.makeText(this, "Payment Failed", Toast.LENGTH_SHORT).show();
-        imageView.setImageResource(R.drawable.ic_failed);
+       
     }
 
     @Override
     public void onTransactionCancelled() {
         // Payment Process Cancelled by User
         Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
-        imageView.setImageResource(R.drawable.ic_failed);
+       
     }
 ```
 
