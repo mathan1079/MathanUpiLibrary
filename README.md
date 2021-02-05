@@ -21,7 +21,7 @@ See below code, these are parameters to start payment processing.
                 .setTransactionId("UNIQUE_TRANSACTION_ID")
                 .setTransactionRefId("UNIQUE_TRANSACTION_REF_ID")
                 .build();
-setUrl(...) is optional
+
 Parameter Details:
 
 Method	Mandatory	Description
