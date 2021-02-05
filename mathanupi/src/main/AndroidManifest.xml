@@ -2,4 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mathan.mathanupi">
 
+    <application>
+        <activity
+            android:name="com.mathan.mathanupi.ui.PaymentActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+    </application>
+
 </manifest>
