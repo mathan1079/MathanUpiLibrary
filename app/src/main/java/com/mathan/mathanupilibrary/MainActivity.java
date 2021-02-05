@@ -41,14 +41,15 @@ public class MainActivity extends AppCompatActivity implements PaymentStatusList
     }
 
     @Override
-    public void onTransactionSubmitted() {
-        //do your logic
+    public void onTransactionSubmitted(TransactionResponse transactionResponse) {
+
     }
 
     @Override
     public void onTransactionFailed() {
-        //do your logic
+
     }
+
 
     @Override
     public void onTransactionCancelled() {

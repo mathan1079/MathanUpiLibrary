@@ -1,7 +1,6 @@
 package com.mathan.mathanupi.ui;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
@@ -11,12 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.mathan.mathanupi.R;
 import com.mathan.mathanupi.Singleton;
 import com.mathan.mathanupi.entity.PaymentPayload;
 import com.mathan.mathanupi.entity.TransactionResponse;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -119,13 +116,13 @@ public final class PaymentActivity extends AppCompatActivity {
                     newlist.add(resolveInfo1);
                 }
 
-              /*  if (resolveInfo.activityInfo.packageName.equals("net.one97.paytm")){
+                if (resolveInfo.activityInfo.packageName.equals("net.one97.paytm")){
                     Intent intent1 = new Intent();
                     intent1.setPackage("net.one97.paytm");
                     intent1.setData(uri);
                     ResolveInfo resolveInfo1=getPackageManager().resolveActivity(intent1,0);
                     newlist.add(resolveInfo1);
-                }*/
+                }
             }
             if (newlist.isEmpty()){
                 Toast.makeText(this, "No UPI Supported app found in device! Please Install to Proceed!", Toast.LENGTH_LONG).show();
@@ -181,13 +178,13 @@ public final class PaymentActivity extends AppCompatActivity {
                         if (transactionDetails.getStatus().toLowerCase().equals("success")) {
                             callbackTransactionSuccess(transactionDetails);
                         } else if (transactionDetails.getStatus().toLowerCase().equals("submitted")) {
-                            callbackTransactionSubmitted();
-                        } else {
-                            callbackTransactionFailed();
+                            callbackTransactionSubmitted(transactionDetails);
+                        } else if (transactionDetails.getStatus().toLowerCase().equals("fa")){
+                            callbackTransactionFailed(transactionDetails);
                         }
                     } catch (Exception e) {
                         callbackTransactionCancelled();
-                        callbackTransactionFailed();
+                        callbackTransactionFailed(transactionDetails);
                     }
                 }
             } else {
@@ -232,15 +229,15 @@ public final class PaymentActivity extends AppCompatActivity {
         }
     }
 
-    private void callbackTransactionSubmitted() {
+    private void callbackTransactionSubmitted(TransactionResponse transactionDetails) {
         if (isListenerRegistered()) {
-            singleton.getListener().onTransactionSubmitted();
+            singleton.getListener().onTransactionSubmitted(transactionDetails);
         }
     }
 
-    private void callbackTransactionFailed() {
+    private void callbackTransactionFailed(TransactionResponse transactionDetails) {
         if (isListenerRegistered()) {
-            singleton.getListener().onTransactionFailed();
+            singleton.getListener().onTransactionFailed(transactionDetails);
         }
     }
 
