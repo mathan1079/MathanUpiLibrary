@@ -15,19 +15,7 @@ Hello Guys, I have created and publish this Android library to easily implement 
 ***Requirement for this library:*** UPI Deep-linking supported application are *required to be already installed in user mobile before using this library*. <br>
 
 
-## How it Works
-<table style="width:100%">
-  <tr>
-    <td><img src="screenshots/IndiUpi1.png"/></td>
-    <td><img src="screenshots/IndiUpi2.png"/></td>
-    <td><img src="screenshots/IndiUpi3.png"/></td>
-  </tr>
-  <tr>
-    <th>1. Enter UPA, NAME, AMOUNT and Description</th>
-    <th>2. Click on Pay and Select UPI App</th>
-    <th>3. Response received in previous activity.</th>
-  </tr>
-</table>
+
 
 ## Implementation
 You can clone this repository and import this project in Android Studio.
