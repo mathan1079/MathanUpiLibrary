@@ -26,7 +26,7 @@ In your `build.gradle` file of app module, add below dependency to import this l
 ```
 
 ### In Your Working Activity
-In Android app, Create activity and implement basic payment integration step where you want to add. In demo app I have already created `SampleActivity.java`
+In Android app, Create activity and implement basic payment integration step where you want to add. In demo app I have already created `MainActivity.java`
 
 #### Initializing `MatUpi` :
 See below code, these are parameters to start payment processing.
@@ -38,9 +38,7 @@ See below code, these are parameters to start payment processing.
                 .setPayeeName("payee name")
                 .setDescription("DESCRIPTION")
                 .setTransactionId("UNIQUE_TRANSACTION_ID")
-                .setTransactionRefId("UNIQUE_TRANSACTION_REF_ID")
-		.setUrl("HTTP_OR_HTTPS", "WWW.EXAMPLE.COM", "API.php")
-		//internal parameter automatically add in URL same as above UPI request
+                .setTransactionRefId("UNIQUE_TRANSACTION_REF_ID")		
                 .build();
 ```
 #### setUrl(...) is optional
