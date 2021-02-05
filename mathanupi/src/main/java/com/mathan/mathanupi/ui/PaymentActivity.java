@@ -47,7 +47,7 @@ public final class PaymentActivity extends AppCompatActivity {
         payUri.scheme("upi").authority("pay");
         payUri.appendQueryParameter("pa", payment.getVpa());
         payUri.appendQueryParameter("pn", payment.getName());
-        payUri.appendQueryParameter("tid", payment.getTxnId());
+      //  payUri.appendQueryParameter("tid", payment.getTxnId());
 
         if (payment.getPayeeMerchantCode() != null) {
             payUri.appendQueryParameter("mc", payment.getPayeeMerchantCode());
@@ -63,7 +63,7 @@ public final class PaymentActivity extends AppCompatActivity {
                 Uri.Builder callbackUrl = payment.getUrl().buildUpon();
                 callbackUrl.appendQueryParameter("pa", payment.getVpa());
                 callbackUrl.appendQueryParameter("pn", payment.getName());
-                callbackUrl.appendQueryParameter("tid", payment.getTxnId());
+                //callbackUrl.appendQueryParameter("tid", payment.getTxnId());
 
                 if (payment.getPayeeMerchantCode() != null) {
                     callbackUrl.appendQueryParameter("mc", payment.getPayeeMerchantCode());

@@ -23,7 +23,7 @@ public class PaymentPayload implements Parcelable {
         vpa = in.readString();
         name = in.readString();
         payeeMerchantCode = in.readString();
-        txnId = in.readString();
+       // txnId = in.readString();
         txnRefId = in.readString();
         description = in.readString();
         amount = in.readString();
@@ -36,7 +36,7 @@ public class PaymentPayload implements Parcelable {
         dest.writeString(vpa);
         dest.writeString(name);
         dest.writeString(payeeMerchantCode);
-        dest.writeString(txnId);
+        //dest.writeString(txnId);
         dest.writeString(txnRefId);
         dest.writeString(description);
         dest.writeString(amount);
