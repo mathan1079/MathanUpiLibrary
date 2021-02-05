@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements PaymentStatusList
     }
 
     @Override
-    public void onTransactionFailed() {
+    public void onTransactionFailed(TransactionResponse transactionResponse) {
 
     }
 

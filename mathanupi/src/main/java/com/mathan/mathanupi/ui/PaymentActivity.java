@@ -177,9 +177,10 @@ public final class PaymentActivity extends AppCompatActivity {
                     try {
                         if (transactionDetails.getStatus().toLowerCase().equals("success")) {
                             callbackTransactionSuccess(transactionDetails);
+
                         } else if (transactionDetails.getStatus().toLowerCase().equals("submitted")) {
                             callbackTransactionSubmitted(transactionDetails);
-                        } else if (transactionDetails.getStatus().toLowerCase().equals("fa")){
+                        } else if (transactionDetails.getStatus().toLowerCase().equals("failure")||transactionDetails.getStatus().toLowerCase().equals("failed")){
                             callbackTransactionFailed(transactionDetails);
                         }
                     } catch (Exception e) {
