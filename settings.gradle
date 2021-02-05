@@ -1,0 +1,3 @@
+include ':mathanupi'
+include ':app'
+rootProject.name = "MathanUpiLibrary"
